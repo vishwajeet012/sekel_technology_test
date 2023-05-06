@@ -1,7 +1,6 @@
 <template>
     <div>
       <h2>{{ title }}</h2>
-      <h2>title</h2>
       <div>
         <input v-model="newItem" type="text" placeholder="Add New Item" />
         <button @click="addItem">Add</button>
