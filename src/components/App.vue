@@ -12,7 +12,7 @@
   </template>
   
   <script>
-  import { ref, computed } from 'vue';
+  import { ref, computed, onMounted } from 'vue';
   import { useRoute } from 'vue-router';
   
   import Folder from './components/Folder.vue';
@@ -26,11 +26,14 @@
     setup() {
       const route = useRoute();
       const folderName = computed(() => `To-Do List - ${route.params.id}`);
-      console.log("folder",folderName)
-  
+   
       return {
         folderName,
       };
+
+
+      
     },
+
   };
   </script>

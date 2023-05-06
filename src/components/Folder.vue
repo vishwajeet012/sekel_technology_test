@@ -8,6 +8,7 @@
       <ul>
         <li v-for="(folder, index) in folders" :key="index">
           <router-link :to="{ name: 'folder', params: { id: index } }">{{ folder.text }}</router-link>
+          <!-- <span :class="{ completed: folder.completed }">{{ folder.text }}</span> -->
           <button @click="removeFolder(index)">x</button>
         </li>
       </ul>
@@ -16,6 +17,7 @@
   
   <script>
   import { ref } from 'vue';
+  // import { toRefs } from "@vue/reactivity";
   
   export default {
     props: {
@@ -38,7 +40,8 @@
   
       const removeFolder = (index) => {
         folders.value.splice(index, 1);
-      };
+      }
+     
   
       return {
         newFolder,
@@ -47,6 +50,11 @@
         removeFolder,
       };
     },
+
+    onMounted(){
+      // console.log("props",this.title)
+
+    }
   };
   </script>
   
